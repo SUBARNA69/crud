@@ -1,0 +1,38 @@
+﻿@model List<CRUD2.Models.ProductModel>
+
+<h1>Users</h1>
+<div class="container">
+    <div class="row">
+        @foreach (var user in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card">
+                    <img src="~/Images/@user.Image" class="card-img-top" alt="User Image" style="height: 300px; object-fit: cover; align-content: center" />
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@user.Name</h5>
+                        <h5 class="card-title">@user.Price</h5>
+
+                        <form method="post" action="@Url.Action("AddToCart", "User")">
+                            <input type="hidden" name="id" value="@user.Id" />
+                            <button type="submit" class="btn btn-primary mb-2">Add to Cart</button>
+                        </form>
+                        <a href="@Url.Action("see", "User", new { id = user.Id })" class="btn btn-primary btn-block">View More</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            @if (TempData["ItemAdded"] != null)
+            {
+                <text>
+                    alert('Item added to cart successfully!');
+                </text>
+            }
+        });
+    </script>
+}

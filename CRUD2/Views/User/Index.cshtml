@@ -1,0 +1,34 @@
+﻿@model List<CRUD2.Models.ProductModel>
+
+<h1>Users</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+                <td>@user.Description</td>
+                <td>@user.Quantity</td>
+                <td>@user.Price</td>
+                <td>
+                    <img src="~/Images/@user.Image" alt="User Image" style="width:100px;height:100px;" />
+                </td>
+                <td>
+                    <a href="User/Edit/@user.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

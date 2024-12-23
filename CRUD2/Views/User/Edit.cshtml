@@ -1,0 +1,33 @@
+﻿@model CRUD2.Models.EditProductModel
+@{
+}
+<h1>Add User</h1>
+<form method="post" action="Edit" class="mt-5" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="name" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="name" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Description</label>
+        <input type="text" class="form-control" asp-for="Description">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Quantity</label>
+        <input type="number" class="form-control" asp-for="Quantity">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Price</label>
+        <input type="text" class="form-control" asp-for="Price">
+    </div>
+    <div class="mb-3">
+        <label for="photo" class="form-label">Image</label>
+        <input type="file" class="form-control" id="photo" name="photo">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="User">Delete</button>
+</form>

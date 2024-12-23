@@ -1,0 +1,30 @@
+﻿@model CRUD2.Models.ProductModel
+
+<h2 class="text-center">User Details</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="text-center mb-4">
+                <img src="~/Images/@Model.Image" alt="User Image" style="width:300px;height:350px;" />
+            </div>
+            <dl class="dl-horizontal">
+                <dt>Name</dt>
+                <dd>@Model.Name</dd>
+                <dt>Description</dt>
+                <dd>@Model.Description</dd>
+                <dt>Quantity</dt>
+                <dd>@Model.Quantity</dd>
+                <dt>Price</dt>
+                <dd>@Model.Price</dd>
+                <a href="@Url.Action("Edit", "User", new { id = Model.Id })">Edit</a>
+
+            </dl>
+      
+    </tbody>
+</table>
+
+
+        </div>
+    </div>
+</div>
